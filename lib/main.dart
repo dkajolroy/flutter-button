@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:session/widgets/button_widget.dart';
+import 'package:session/widgets/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ButtonWidget(),
+      home: BottomNav(),
     );
   }
 }
