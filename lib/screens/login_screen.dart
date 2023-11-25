@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -41,12 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.person_outline),
-                        labelText: "Username"),
+                        labelText: "Email address"),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
                     controller: passwordController,
                     validator: (value) {
                       if (value!.isEmpty) {
