@@ -10,7 +10,7 @@ class TextButtonWidget extends StatelessWidget {
         style: TextButton.styleFrom(
             alignment: Alignment.center,
             elevation: 5,
-            fixedSize: const Size(200, 50),
+            fixedSize: const Size.fromWidth(double.maxFinite),
             side: BorderSide(
               width: 2,
               color: (Colors.teal[900])!,
