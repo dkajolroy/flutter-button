@@ -9,6 +9,7 @@ class LoginScreen extends StatefulWidget {
 
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
+TextEditingController passwordController2 = TextEditingController();
 bool obscureText = true;
 
 final _formkey = GlobalKey<FormState>();
@@ -62,6 +63,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.lock_outline),
                         labelText: "Password",
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                obscureText = !obscureText;
+                              });
+                            },
+                            icon: const Icon(Icons.visibility))),
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    controller: passwordController2,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Password is empty !";
+                      } else if (value != passwordController) {
+                        return "Password does not match !";
+                      }
+                      return null;
+                    },
+                    obscureText: obscureText,
+                    decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.lock_outline),
+                        labelText: "Re-type Password",
                         suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
